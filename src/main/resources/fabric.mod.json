@@ -3,13 +3,13 @@
 	"id": "archeologyplus",
 	"version": "${version}",
 	"name": "Archeology Plus",
-	"description": "Adds to the 1.20 update.",
+	"description": "A 1.20 mod that aims to add more content to the new Archeology feature.",
 	"authors": [
 		"EmilSG"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "https://modrinth.com/mod/archeology-plus",
+		"sources": "https://github.com/EmilsGithub/Archeology-Plus"
 	},
 	"license": "MIT",
 	"icon": "assets/archeologyplus/icon.png",

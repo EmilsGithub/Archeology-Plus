@@ -4,7 +4,6 @@ import net.emilsg.archeologyplus.register.items.ModItems;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
 public class LootTableModifiers {
@@ -58,18 +57,6 @@ public class LootTableModifiers {
                         .with(AlternativeEntry.builder(ItemEntry.builder(ModItems.REVIVE_POTTERY_SHERD)))
                         .with(AlternativeEntry.builder(ItemEntry.builder(ModItems.FLIGHT_POTTERY_SHERD)))
                         .with(AlternativeEntry.builder(ItemEntry.builder(ModItems.LOADER_POTTERY_SHERD)))
-                );
-            }
-
-
-        }));
-    }
-
-    public static void conditionalModifyLootTable() {
-        LootTableEvents.MODIFY.register(((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (id.equals(DESERT_WELL) || id.equals(DESERT_PYRAMID) || id.equals(TRAIL_RUINS_RARE)) {
-                tableBuilder.modifyPools(builder -> builder
-                        .with(AlternativeEntry.builder(ItemEntry.builder(Registries.ITEM.get(new Identifier("clutter", "copper_coin"))).weight(1)))
                 );
             }
         }));
