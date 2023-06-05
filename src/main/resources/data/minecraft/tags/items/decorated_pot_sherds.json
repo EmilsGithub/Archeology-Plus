@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "archeologyplus:loader_pottery_sherd",
+    "archeologyplus:master_pottery_sherd",
+    "archeologyplus:merchant_pottery_sherd",
+    "archeologyplus:hop_pottery_sherd",
+    "archeologyplus:sight_pottery_sherd",
+    "archeologyplus:night_pottery_sherd",
+    "archeologyplus:might_pottery_sherd",
+    "archeologyplus:fright_pottery_sherd",
+    "archeologyplus:light_pottery_sherd",
+    "archeologyplus:flight_pottery_sherd",
+    "archeologyplus:chomp_pottery_sherd",
+    "archeologyplus:revive_pottery_sherd"
+  ]
+}

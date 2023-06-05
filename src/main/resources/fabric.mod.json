@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "archeologyplus",
+	"version": "${version}",
+	"name": "Archeology Plus",
+	"description": "Adds to the 1.20 update.",
+	"authors": [
+		"EmilSG"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/archeologyplus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.emilsg.archeologyplus.ArcheologyPlus"
+		],
+		"client": [
+			"net.emilsg.archeologyplus.ArcheologyPlusClient"
+		],
+		"fabric-datagen": [
+			"net.emilsg.archeologyplus.ArcheologyPlusDataGenerator"
+		]
+	},
+	"mixins": [
+		"archeologyplus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20-rc.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
