@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:bone_desert_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:bone_desert",
+        "processors": "archeologyplus:bone_sand_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

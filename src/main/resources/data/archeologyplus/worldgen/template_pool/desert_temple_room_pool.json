@@ -1,0 +1,79 @@
+{
+  "name": "archeologyplus:desert_temple_start_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_small_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_large_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_three_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_level_two_drop_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_small_level_two_drop_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_bed_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_food_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_pottery_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:desert_temple_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:desert_temple",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "position=0": {"model": "archeologyplus:block/loot_pot"},
+    "position=1": {"model": "archeologyplus:block/loot_pot_diagonal", "y":  90},
+    "position=2": {"model": "archeologyplus:block/loot_pot_diagonal", "y":  180},
+    "position=3": {"model": "archeologyplus:block/loot_pot_diagonal", "y":  270},
+    "position=4": {"model": "archeologyplus:block/loot_pot_diagonal"}
+  }
+}

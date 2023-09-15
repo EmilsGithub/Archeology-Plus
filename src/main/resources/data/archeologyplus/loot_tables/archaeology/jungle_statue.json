@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "archeologyplus:chomp_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeologyplus:revive_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "archeologyplus:archaeology/jungle_statue"
+}

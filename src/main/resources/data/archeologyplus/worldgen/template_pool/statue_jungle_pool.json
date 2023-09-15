@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:statue_jungle_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:statue_jungle",
+        "processors": "archeologyplus:statue_gravel_jungle",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

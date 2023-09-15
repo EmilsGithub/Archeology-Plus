@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "archeologyplus:digsite_forest",
+      "weight": 20
+    }
+  ],
+  "placement": {
+    "salt": 834721483,
+    "spacing": 24,
+    "separation": 16,
+    "type": "minecraft:random_spread"
+  }
+}

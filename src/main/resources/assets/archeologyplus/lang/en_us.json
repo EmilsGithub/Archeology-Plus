@@ -1,4 +1,6 @@
 {
+  "itemgroup.archeology_plus": "Archeology Plus",
+
   "item.archeologyplus.master_pottery_sherd": "Master Pottery Sherd",
   "item.archeologyplus.merchant_pottery_sherd": "Merchant Pottery Sherd",
   "item.archeologyplus.loader_pottery_sherd": "Loader Pottery Sherd",
@@ -10,5 +12,23 @@
   "item.archeologyplus.light_pottery_sherd":  "Light Pottery Sherd",
   "item.archeologyplus.flight_pottery_sherd": "Flight Pottery Sherd",
   "item.archeologyplus.chomp_pottery_sherd":  "Chomp Pottery Sherd",
-  "item.archeologyplus.revive_pottery_sherd": "Revive Pottery Sherd"
+  "item.archeologyplus.revive_pottery_sherd": "Revive Pottery Sherd",
+  "item.archeologyplus.sun_idol": "Sun Idol",
+  "item.archeologyplus.moon_idol": "Moon Idol",
+  "item.archeologyplus.seashell_idol": "Seashell Idol",
+  "item.archeologyplus.rain_idol": "Rain Idol",
+  "item.archeologyplus.chisel": "Chisel",
+
+  "block.archeologyplus.suspicious_soul_sand": "Suspicious Soul Sand",
+  "block.archeologyplus.suspicious_red_sand": "Suspicious Red Sand",
+  "block.archeologyplus.suspicious_dirt": "Suspicious Dirt",
+  "block.archeologyplus.loot_pot": "Loot Pot",
+  "block.archeologyplus.crumbling_sandstone": "Crumbling Sandstone",
+  "block.archeologyplus.sandstone_hieroglyphs": "Sandstone Hieroglyphs",
+
+  "description.item.archeologyplus.sun_idol": "Buffs the Holder During Daytime",
+  "description.item.archeologyplus.moon_idol": "Buffs the Holder During Nighttime",
+  "description.item.archeologyplus.seashell_idol": "",
+  "description.item.archeologyplus.rain_idol": "Changes the Weather",
+  "description.item.archeologyplus.chisel": "Used to Chisel Sandstone"
 }

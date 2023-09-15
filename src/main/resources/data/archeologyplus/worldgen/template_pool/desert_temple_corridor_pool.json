@@ -1,0 +1,79 @@
+{
+  "name": "archeologyplus:desert_temple_start_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_straight_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_curved_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:desert_temple_parkour_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_four_corridor_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_vertical_corridor_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:desert_temple_large_corridor_room",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "archeologyplus:desert_temple_huge_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "archeologyplus:desert_temple_large_vertical_corridor",
+        "processors": "archeologyplus:desert_temple_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

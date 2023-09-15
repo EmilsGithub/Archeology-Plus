@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "crumble_level=0": {
+      "model": "archeologyplus:block/crumbling_sandstone_0"
+    },
+    "crumble_level=1": {
+      "model": "archeologyplus:block/crumbling_sandstone_1"
+    },
+    "crumble_level=2": {
+      "model": "archeologyplus:block/crumbling_sandstone_2"
+    },
+    "crumble_level=3": {
+      "model": "archeologyplus:block/crumbling_sandstone_3"
+    }
+  }
+}

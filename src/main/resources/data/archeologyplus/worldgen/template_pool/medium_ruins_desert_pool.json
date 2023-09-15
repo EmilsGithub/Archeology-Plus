@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:medium_ruins_desert_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:medium_ruins_desert",
+        "processors": "archeologyplus:medium_ruins_sand_desert",
+        "projection": "terrain_matching",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

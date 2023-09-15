@@ -12,6 +12,6 @@ import java.util.Map;
 public class DecoratedPotPatternsAccessor {
     @Accessor("SHERD_TO_PATTERN")
     static Map<Item, RegistryKey<String>> getSherdToPattern() {
-        throw new AssertionError();  // This will be implemented at runtime by Mixin, it's just a dummy implementation here
+        throw new AssertionError();
     }
 }

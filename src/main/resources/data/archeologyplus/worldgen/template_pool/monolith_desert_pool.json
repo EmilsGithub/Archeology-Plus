@@ -1,0 +1,16 @@
+{
+  "name": "archeologyplus:monolith_desert_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:monolith_desert",
+        "processors": "archeologyplus:monolith_sand_desert",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

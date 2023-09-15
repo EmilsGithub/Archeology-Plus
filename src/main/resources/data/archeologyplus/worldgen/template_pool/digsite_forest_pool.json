@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:digsite_forest_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:digsite_forest",
+        "processors": "archeologyplus:digsite_gravel_dirt_forest",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
