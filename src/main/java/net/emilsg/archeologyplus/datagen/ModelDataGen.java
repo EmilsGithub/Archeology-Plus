@@ -24,8 +24,11 @@ public class ModelDataGen extends FabricModelProvider {
         blockStateModelGenerator.registerBrushableBlock(ModBlocks.SUSPICIOUS_DIRT);
 
         registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_SANDSTONE, ModProperties.CRUMBLE_LEVEL);
+        registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_RED_SANDSTONE, ModProperties.CRUMBLE_LEVEL);
 
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
+        registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.RED_SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
+
     }
 
     @Override
@@ -47,6 +50,7 @@ public class ModelDataGen extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MOON_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.SEASHELL_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAIN_IDOL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FIRE_IDOL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHISEL, Models.HANDHELD);
     }

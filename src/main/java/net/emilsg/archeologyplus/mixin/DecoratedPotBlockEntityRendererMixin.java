@@ -20,18 +20,24 @@ public class DecoratedPotBlockEntityRendererMixin {
     private static final Map<Item, SpriteIdentifier> ITEM_TEXTURES = new HashMap<>();
 
     static {
-        ITEM_TEXTURES.put(ModItems.LOADER_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.LOADER_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.MASTER_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.MASTER_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.MERCHANT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.MERCHANT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.HOP_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.HOP_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.FRIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.FRIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.LIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.LIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.MIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.MIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.FLIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.FLIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.SIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.SIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.NIGHT_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.NIGHT_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.CHOMP_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.CHOMP_POTTERY_SHERD)));
-        ITEM_TEXTURES.put(ModItems.REVIVE_POTTERY_SHERD, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(ModItems.REVIVE_POTTERY_SHERD)));
+        Item[] sherds = {
+                ModItems.LOADER_POTTERY_SHERD,
+                ModItems.MASTER_POTTERY_SHERD,
+                ModItems.MERCHANT_POTTERY_SHERD,
+                ModItems.HOP_POTTERY_SHERD,
+                ModItems.FRIGHT_POTTERY_SHERD,
+                ModItems.LIGHT_POTTERY_SHERD,
+                ModItems.MIGHT_POTTERY_SHERD,
+                ModItems.FLIGHT_POTTERY_SHERD,
+                ModItems.SIGHT_POTTERY_SHERD,
+                ModItems.NIGHT_POTTERY_SHERD,
+                ModItems.CHOMP_POTTERY_SHERD,
+                ModItems.REVIVE_POTTERY_SHERD
+        };
+
+        for (Item item : sherds) {
+            ITEM_TEXTURES.put(item, TexturedRenderLayers.getDecoratedPotPatternTextureId(ModPottery.fromSherd(item)));
+        }
     }
 
     @Inject(method = "getTextureIdFromSherd", at = @At("HEAD"), cancellable = true)

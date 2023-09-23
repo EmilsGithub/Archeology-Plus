@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "archeologyplus:crumbling_sandstone",
-    "archeologyplus:sandstone_hieroglyphs"
+    "archeologyplus:crumbling_red_sandstone",
+    "archeologyplus:sandstone_hieroglyphs",
+    "archeologyplus:red_sandstone_hieroglyphs"
   ]
 }

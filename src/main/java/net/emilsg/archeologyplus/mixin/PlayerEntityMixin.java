@@ -46,11 +46,16 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         boolean moonAndNight = heldItem(ModItems.MOON_IDOL) && world.isNight();
         boolean inWater = this.isSubmergedIn(FluidTags.WATER);
         boolean shell = heldItem(ModItems.SEASHELL_IDOL);
+        boolean onFire = this.isOnFire();
+        boolean fireIdol = heldItem(ModItems.FIRE_IDOL);
         if(!world.isClient) {
             if(shell && !inWater) {
                 this.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 200, 0, false, false, true));
             } else if (shell && inWater) {
                 this.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200, 0, false, false, true));
+            }
+            if(fireIdol && !onFire) {
+                this.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200, 0, false, false, true));
             }
             if ((sunAndDay || moonAndNight) && shouldApplyModifiers()) {
                 this.addModifiers();

@@ -36,27 +36,34 @@ public class ChiselItem extends DescriptionItem {
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, state.cycle(ModProperties.VARIANT_3), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, state, player, context);
+            return chiselBlock(world, pos, player, context);
         } else if (state.isOf(Blocks.SMOOTH_SANDSTONE) || state.isOf(Blocks.SANDSTONE) || state.isOf(Blocks.CUT_SANDSTONE)) {
             if(world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
-            world.setBlockState(pos, ModBlocks.SANDSTONE_HIEROGLYPHS.getDefaultState(), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, state, player, context);
-        } else if (state.isOf(ModBlocks.CRUMBLING_SANDSTONE)) {
+            world.setBlockState(pos, ModBlocks.SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
+            return chiselBlock(world, pos, player, context);
+        } else if (state.isOf(Blocks.SMOOTH_RED_SANDSTONE) || state.isOf(Blocks.RED_SANDSTONE) || state.isOf(Blocks.CUT_RED_SANDSTONE)) {
+            if(world.isClient) {
+                world.addBlockBreakParticles(pos, state);
+                return ActionResult.SUCCESS;
+            }
+            world.setBlockState(pos, ModBlocks.RED_SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
+            return chiselBlock(world, pos, player, context);
+        } else if (state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE)) {
             if(world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, state.cycle(ModProperties.CRUMBLE_LEVEL), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, state, player, context);
+            return chiselBlock(world, pos, player, context);
         }
 
         return ActionResult.PASS;
     }
 
-    private ActionResult chiselBlock(World world, BlockPos pos, BlockState state, PlayerEntity player, ItemUsageContext context) {
+    private ActionResult chiselBlock(World world, BlockPos pos, PlayerEntity player, ItemUsageContext context) {
         world.playSound(null, pos, SoundEvents.BLOCK_STONE_PLACE, SoundCategory.BLOCKS, 1.25f, 2.0f);
         ItemStack itemStack = context.getStack();
         if (player instanceof ServerPlayerEntity) itemStack.damage(1, player, (p) -> {p.sendToolBreakStatus(context.getHand());});

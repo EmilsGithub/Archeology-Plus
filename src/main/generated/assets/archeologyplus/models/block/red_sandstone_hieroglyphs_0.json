@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "archeologyplus:block/red_sandstone_hieroglyphs_end_0",
+    "side": "archeologyplus:block/red_sandstone_hieroglyphs_0"
+  }
+}

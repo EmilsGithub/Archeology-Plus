@@ -11,7 +11,7 @@ import java.util.Map;
 @Mixin(DecoratedPotPatterns.class)
 public class DecoratedPotPatternsAccessor {
     @Accessor("SHERD_TO_PATTERN")
-    static Map<Item, RegistryKey<String>> getSherdToPattern() {
+    public static Map<Item, RegistryKey<String>> getSherdToPattern() {
         throw new AssertionError();
     }
 }

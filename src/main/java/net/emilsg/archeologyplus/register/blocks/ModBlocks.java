@@ -27,7 +27,10 @@ public class ModBlocks {
     public static final Block LOOT_POT = registerBlock("loot_pot", new LootPotBlock(FabricBlockSettings.copy(Blocks.DECORATED_POT).sounds(BlockSoundGroup.DECORATED_POT_SHATTER).breakInstantly()));
 
     public static final Block CRUMBLING_SANDSTONE = registerBlock("crumbling_sandstone", new CrumblingBlock(FabricBlockSettings.copy(Blocks.SANDSTONE).strength(0.6f)));
+    public static final Block CRUMBLING_RED_SANDSTONE = registerBlock("crumbling_red_sandstone", new CrumblingBlock(FabricBlockSettings.copy(Blocks.RED_SANDSTONE).strength(0.6f)));
+
     public static final Block SANDSTONE_HIEROGLYPHS = registerBlock("sandstone_hieroglyphs", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.SMOOTH_SANDSTONE)));
+    public static final Block RED_SANDSTONE_HIEROGLYPHS = registerBlock("red_sandstone_hieroglyphs", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.SMOOTH_RED_SANDSTONE)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

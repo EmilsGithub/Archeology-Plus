@@ -13,6 +13,8 @@ public class LootTableDataGen extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.CRUMBLING_SANDSTONE);
+        addDrop(ModBlocks.CRUMBLING_RED_SANDSTONE);
+        addDrop(ModBlocks.RED_SANDSTONE_HIEROGLYPHS);
         addDrop(ModBlocks.SANDSTONE_HIEROGLYPHS);
     }
 }

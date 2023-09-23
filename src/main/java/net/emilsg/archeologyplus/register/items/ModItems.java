@@ -13,6 +13,16 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
+    /**
+      To add a new Sherd-Item with Pattern:
+      1. Make Item for Sherd
+      2. Add Item to Tag
+      3. Add Item to ItemGroup
+      4. Add Item to DecoratedPotBlockEntityRendererMixin
+      5. Add Item with String to ModPottery Map
+      6. Add Textures(For Item and Pattern) + Model(For Item)
+    **/
+
     public static final Item LOADER_POTTERY_SHERD = registerItem("loader_pottery_sherd", new Item(new FabricItemSettings()));
     public static final Item MASTER_POTTERY_SHERD = registerItem("master_pottery_sherd", new Item(new FabricItemSettings()));
     public static final Item MERCHANT_POTTERY_SHERD = registerItem("merchant_pottery_sherd", new Item(new FabricItemSettings()));
@@ -30,6 +40,7 @@ public class ModItems {
     public static final Item MOON_IDOL = registerItem("moon_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.moon_idol", Formatting.BLUE));
     public static final Item SEASHELL_IDOL = registerItem("seashell_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.seashell_idol", Formatting.BLUE));
     public static final Item RAIN_IDOL = registerItem("rain_idol", new RainIdolItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.rain_idol", Formatting.BLUE));
+    public static final Item FIRE_IDOL = registerItem("fire_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.fire_idol", Formatting.BLUE));
 
     public static final Item CHISEL = registerItem("chisel", new ChiselItem(new FabricItemSettings().maxDamage(432), "description.item.archeologyplus.chisel", Formatting.BLUE));
 
