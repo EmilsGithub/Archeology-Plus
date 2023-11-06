@@ -28,20 +28,29 @@ public class ModItemGroups {
                         entries.add(ModItems.NIGHT_POTTERY_SHERD);
                         entries.add(ModItems.CHOMP_POTTERY_SHERD);
                         entries.add(ModItems.REVIVE_POTTERY_SHERD);
+                        entries.add(ModItems.BUTTERFLY_POTTERY_SHERD);
+                        entries.add(ModItems.NAUTILUS_POTTERY_SHERD);
+                        entries.add(ModItems.HALO_POTTERY_SHERD);
+                        entries.add(ModItems.DEVIL_POTTERY_SHERD);
+
                         entries.add(ModItems.CHISEL);
+
                         entries.add(ModItems.SUN_IDOL);
                         entries.add(ModItems.MOON_IDOL);
                         entries.add(ModItems.SEASHELL_IDOL);
                         entries.add(ModItems.RAIN_IDOL);
                         entries.add(ModItems.FIRE_IDOL);
+                        entries.add(ModItems.HARVEST_IDOL);
+                        entries.add(ModItems.GLIDING_IDOL);
+                        entries.add(ModItems.WITHER_IDOL);
 
                         entries.add(ModBlocks.LOOT_POT);
                         entries.add(ModBlocks.SUSPICIOUS_DIRT);
                         entries.add(ModBlocks.SUSPICIOUS_RED_SAND);
                         entries.add(ModBlocks.SUSPICIOUS_SOUL_SAND);
                         entries.add(ModBlocks.CRUMBLING_SANDSTONE);
-                        entries.add(ModBlocks.CRUMBLING_RED_SANDSTONE);
                         entries.add(ModBlocks.SANDSTONE_HIEROGLYPHS);
+                        entries.add(ModBlocks.CRUMBLING_RED_SANDSTONE);
                         entries.add(ModBlocks.RED_SANDSTONE_HIEROGLYPHS);
 
                     }).build());

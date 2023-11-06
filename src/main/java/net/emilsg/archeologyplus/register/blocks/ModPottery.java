@@ -32,6 +32,10 @@ public class ModPottery {
         map.put(ModItems.FLIGHT_POTTERY_SHERD, "flight");
         map.put(ModItems.CHOMP_POTTERY_SHERD, "chomp");
         map.put(ModItems.REVIVE_POTTERY_SHERD, "revive");
+        map.put(ModItems.BUTTERFLY_POTTERY_SHERD, "butterfly");
+        map.put(ModItems.NAUTILUS_POTTERY_SHERD, "nautilus");
+        map.put(ModItems.HALO_POTTERY_SHERD, "halo");
+        map.put(ModItems.DEVIL_POTTERY_SHERD, "devil");
         ITEM_TO_PATTERN_NAME = Collections.unmodifiableMap(map);
 
 

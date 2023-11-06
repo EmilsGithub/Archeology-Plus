@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "archeologyplus:sun_idol",
+    "archeologyplus:moon_idol",
+    "archeologyplus:seashell_idol",
+    "archeologyplus:rain_idol",
+    "archeologyplus:fire_idol",
+    "archeologyplus:harvest_idol",
+    "archeologyplus:gliding_idol",
+    "archeologyplus:wither_idol"
+  ]
+}

@@ -19,16 +19,16 @@ import net.minecraft.world.World;
 
 public class ChiselItem extends DescriptionItem {
 
-    public ChiselItem(Settings settings, String description, Formatting formatting) {
-        super(settings, description, formatting);
+    public ChiselItem(Settings settings, String description, Formatting formatting, String subDescription, Formatting subFormatting) {
+        super(settings, description, formatting, subDescription, subFormatting);
     }
 
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        BlockPos pos = context.getBlockPos();
-        BlockState state = context.getWorld().getBlockState(pos);
-        World world = context.getWorld();
-        PlayerEntity player = context.getPlayer();
+    public ActionResult useOnBlock(ItemUsageContext ctx) {
+        BlockPos pos = ctx.getBlockPos();
+        BlockState state = ctx.getWorld().getBlockState(pos);
+        World world = ctx.getWorld();
+        PlayerEntity player = ctx.getPlayer();
 
         if(state.getBlock() instanceof HieroglyphBlock) {
             if(world.isClient) {
@@ -36,28 +36,28 @@ public class ChiselItem extends DescriptionItem {
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, state.cycle(ModProperties.VARIANT_3), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, context);
-        } else if (state.isOf(Blocks.SMOOTH_SANDSTONE) || state.isOf(Blocks.SANDSTONE) || state.isOf(Blocks.CUT_SANDSTONE)) {
+            return chiselBlock(world, pos, player, ctx);
+        } else if (state.isOf(Blocks.SMOOTH_SANDSTONE) || state.isOf(Blocks.SANDSTONE) || state.isOf(Blocks.CUT_SANDSTONE) || state.isOf(Blocks.CHISELED_SANDSTONE)) {
             if(world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, ModBlocks.SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, context);
-        } else if (state.isOf(Blocks.SMOOTH_RED_SANDSTONE) || state.isOf(Blocks.RED_SANDSTONE) || state.isOf(Blocks.CUT_RED_SANDSTONE)) {
+            return chiselBlock(world, pos, player, ctx);
+        } else if (state.isOf(Blocks.SMOOTH_RED_SANDSTONE) || state.isOf(Blocks.RED_SANDSTONE) || state.isOf(Blocks.CUT_RED_SANDSTONE) || state.isOf(Blocks.CHISELED_RED_SANDSTONE)) {
             if(world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, ModBlocks.RED_SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, context);
+            return chiselBlock(world, pos, player, ctx);
         } else if (state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE)) {
             if(world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
             world.setBlockState(pos, state.cycle(ModProperties.CRUMBLE_LEVEL), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, context);
+            return chiselBlock(world, pos, player, ctx);
         }
 
         return ActionResult.PASS;

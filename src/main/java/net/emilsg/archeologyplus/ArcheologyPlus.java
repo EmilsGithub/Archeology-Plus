@@ -16,9 +16,10 @@ public class ArcheologyPlus implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
 
 		LootTableModifiers.modifyLootTables();
 	}
+
 }

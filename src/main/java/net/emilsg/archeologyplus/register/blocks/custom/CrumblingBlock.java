@@ -56,7 +56,7 @@ public class CrumblingBlock extends Block {
 
     @Override
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-        super.onLandedUpon(world, state, pos, entity, fallDistance);
+        entity.handleFallDamage(fallDistance, 0.2f, world.getDamageSources().fall());
         if(!world.isClient) breakOrCycleState(world, pos, state, (int) fallDistance, true);
     }
 

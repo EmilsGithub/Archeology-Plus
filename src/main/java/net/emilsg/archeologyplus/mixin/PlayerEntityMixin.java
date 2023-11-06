@@ -10,6 +10,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.ItemCooldownManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -39,6 +40,10 @@ public abstract class PlayerEntityMixin extends LivingEntity {
 
     @Shadow public abstract Iterable<ItemStack> getHandItems();
 
+    @Shadow public abstract boolean isPlayer();
+
+    @Shadow public abstract ItemCooldownManager getItemCooldownManager();
+
     @Inject(method = "tick", at = @At("HEAD"))
     public void tickIdolItems(CallbackInfo ci) {
         World world = this.getWorld();
@@ -48,6 +53,8 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         boolean shell = heldItem(ModItems.SEASHELL_IDOL);
         boolean onFire = this.isOnFire();
         boolean fireIdol = heldItem(ModItems.FIRE_IDOL);
+        boolean glidingIdol = heldItem(ModItems.GLIDING_IDOL);
+        boolean witherIdol = heldItem(ModItems.WITHER_IDOL);
         if(!world.isClient) {
             if(shell && !inWater) {
                 this.addStatusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 200, 0, false, false, true));
@@ -61,6 +68,12 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 this.addModifiers();
             } else if (!shouldApplyModifiers() && !sunAndDay && !moonAndNight) {
                 removeModifiers();
+            }
+            if (glidingIdol && this.fallDistance > 20f && !this.isFallFlying() && !this.getItemCooldownManager().isCoolingDown(ModItems.GLIDING_IDOL)) {
+                applySlowFalling();
+            }
+            if (witherIdol && this.hasStatusEffect(StatusEffects.WITHER) && !this.getItemCooldownManager().isCoolingDown(ModItems.WITHER_IDOL)) {
+                removeWitherEffect();
             }
         }
     }
@@ -90,8 +103,23 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         return Objects.requireNonNull(speedAttribute).getModifier(SPEED_UUID) == null && Objects.requireNonNull(healthAttribute).getModifier(RESISTANCE_UUID) == null;
     }
 
-    private boolean heldItem(Item item) {return getStackInHand(Hand.MAIN_HAND).isOf(item) || getStackInHand(Hand.OFF_HAND).isOf(item);}
-    private void addModifiers() {Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).addTemporaryModifier(SPEED_MODIFIER); Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).addTemporaryModifier(RESISTANCE_MODIFIER);}
-    private void removeModifiers() {Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).removeModifier(SPEED_MODIFIER); Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).removeModifier(RESISTANCE_MODIFIER);}
-
+    private boolean heldItem(Item item) {
+        return getStackInHand(Hand.MAIN_HAND).isOf(item) || getStackInHand(Hand.OFF_HAND).isOf(item);
+    }
+    private void addModifiers() {
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).addTemporaryModifier(SPEED_MODIFIER);
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).addTemporaryModifier(RESISTANCE_MODIFIER);
+    }
+    private void removeModifiers() {
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).removeModifier(SPEED_MODIFIER);
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).removeModifier(RESISTANCE_MODIFIER);
+    }
+    private void applySlowFalling() {
+        this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0));
+        this.getItemCooldownManager().set(ModItems.GLIDING_IDOL, 400);
+    }
+    private void removeWitherEffect() {
+        this.removeStatusEffect(StatusEffects.WITHER);
+        this.getItemCooldownManager().set(ModItems.WITHER_IDOL, 200);
+    }
 }

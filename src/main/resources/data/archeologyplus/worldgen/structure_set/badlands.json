@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "archeologyplus:monolith_badlands",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 867423742,
+    "spacing": 20,
+    "separation": 14,
+    "type": "minecraft:random_spread"
+  }
+}

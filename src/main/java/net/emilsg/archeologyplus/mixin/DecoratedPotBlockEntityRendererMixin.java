@@ -32,7 +32,11 @@ public class DecoratedPotBlockEntityRendererMixin {
                 ModItems.SIGHT_POTTERY_SHERD,
                 ModItems.NIGHT_POTTERY_SHERD,
                 ModItems.CHOMP_POTTERY_SHERD,
-                ModItems.REVIVE_POTTERY_SHERD
+                ModItems.REVIVE_POTTERY_SHERD,
+                ModItems.BUTTERFLY_POTTERY_SHERD,
+                ModItems.NAUTILUS_POTTERY_SHERD,
+                ModItems.HALO_POTTERY_SHERD,
+                ModItems.DEVIL_POTTERY_SHERD
         };
 
         for (Item item : sherds) {

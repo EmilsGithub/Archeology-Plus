@@ -13,10 +13,19 @@
   "item.archeologyplus.flight_pottery_sherd": "Flight Pottery Sherd",
   "item.archeologyplus.chomp_pottery_sherd":  "Chomp Pottery Sherd",
   "item.archeologyplus.revive_pottery_sherd": "Revive Pottery Sherd",
+  "item.archeologyplus.butterfly_pottery_sherd": "Butterfly Pottery Sherd",
+  "item.archeologyplus.nautilus_pottery_sherd": "Nautilus Pottery Sherd",
+  "item.archeologyplus.halo_pottery_sherd": "Halo Pottery Sherd",
+  "item.archeologyplus.devil_pottery_sherd": "Devil Pottery Sherd",
+
   "item.archeologyplus.sun_idol": "Sun Idol",
   "item.archeologyplus.moon_idol": "Moon Idol",
   "item.archeologyplus.seashell_idol": "Seashell Idol",
   "item.archeologyplus.rain_idol": "Rain Idol",
+  "item.archeologyplus.fire_idol": "Fire Idol",
+  "item.archeologyplus.harvest_idol": "Harvest Idol",
+  "item.archeologyplus.gliding_idol": "Gliding Idol",
+  "item.archeologyplus.wither_idol": "Wither Idol",
   "item.archeologyplus.chisel": "Chisel",
 
   "block.archeologyplus.suspicious_soul_sand": "Suspicious Soul Sand",
@@ -25,10 +34,24 @@
   "block.archeologyplus.loot_pot": "Loot Pot",
   "block.archeologyplus.crumbling_sandstone": "Crumbling Sandstone",
   "block.archeologyplus.sandstone_hieroglyphs": "Sandstone Hieroglyphs",
+  "block.archeologyplus.crumbling_red_sandstone": "Crumbling Red Sandstone",
+  "block.archeologyplus.red_sandstone_hieroglyphs": "Red Sandstone Hieroglyphs",
 
-  "description.item.archeologyplus.sun_idol": "Buffs the Holder During Daytime",
-  "description.item.archeologyplus.moon_idol": "Buffs the Holder During Nighttime",
-  "description.item.archeologyplus.seashell_idol": "",
+  "description.item.archeologyplus.sun_idol": "Buffs the Holder during Daytime",
+  "description.item.archeologyplus.moon_idol": "Buffs the Holder during Nighttime",
+  "description.item.archeologyplus.seashell_idol": "Buffs the Holder when Submerged in Water",
   "description.item.archeologyplus.rain_idol": "Changes the Weather",
-  "description.item.archeologyplus.chisel": "Used to Chisel Sandstone"
+  "description.item.archeologyplus.fire_idol": "Makes the Holder Slightly Fire Resistant",
+  "description.item.archeologyplus.tree_idol": "Can be Used to Create Trees",
+  "description.item.archeologyplus.chisel": "Used to Chisel Sandstone",
+  "description.item.archeologyplus.harvest_idol": "Able to Till Ground and Grow Plants",
+  "description.item.archeologyplus.gliding_idol": "Prevents Damage for High Falls",
+  "description.item.archeologyplus.wither_idol": "Cleanses the Wither Effect for the Holder",
+
+  "subdescription.item.archeologyplus.sun_idol": "Buffs the Holders Resistance and Movement Speed during the Day",
+  "subdescription.item.archeologyplus.moon_idol": "Buffs the Holders Resistance and Movement Speed during the Night",
+  "subdescription.item.archeologyplus.seashell_idol": "Breathe Underwater a bit Longer and Mine a bit Faster",
+  "subdescription.item.archeologyplus.chisel": "Chisels different kinds of Sandstone into Hieroglyphs and Cycles the State of Crumbling Blocks",
+  "subdescription.item.archeologyplus.harvest_idol": "Functions like a Hoe while being able to Grow Plants, slowly Regenerates Durability",
+  "description.shift.prompt": "Hold SHIFT for More"
 }

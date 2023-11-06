@@ -3,6 +3,7 @@
   "package": "net.emilsg.archeologyplus.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AnvilScreenHandlerMixin",
     "BlockEntityTypeMixin",
     "DecoratedPotPatternsAccessor",
     "DecoratedPotPatternsMixin",

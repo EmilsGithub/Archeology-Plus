@@ -34,19 +34,31 @@ public class RainIdolItem extends DescriptionItem {
     }
 
     private void toggleWeather(ServerWorld world, PlayerEntity serverUser) {
-        if (world.isRaining()) {
-            setClear(world);
-            serverUser.sendMessage(Text.literal("The Skies Begin to Clear"), true);
-        } else {
-            if (world.random.nextInt(3) > 0) {
-                setRain(world);
-                serverUser.sendMessage(Text.literal("Rainclouds Begin to Form"), true);
-            } else {
-                setThunder(world);
-                serverUser.sendMessage(Text.literal("A Thunderstorm is Brewing"), true);
-            }
-        }
+        int randomInt = world.random.nextInt(4);
+        String[] clearRainMsgs = {"The Clouds Break and Rain Stops", "The Rain stops Abruptly", "Suddenly the Rain Stops", "The Rainclouds Clear"};
+        String[] clearThunderMsgs = {"The Thunder Fades into Silence", "The Thunder Quiets Down and the Sky Lightens", "The Clouds Scatter and Thunder Ceases", "Thunder Fades into the Distance"};
+        String[] startRainMsgs = {"Rainclouds Begin to Form", "Rainclouds Gather in the Sky", "You Feel the Weather Changing", "First Drops of Rain Fall"};
+        String[] startThunderMsgs = {"You Hear the First Clap of Thunder", "The Sky Vibrates with Thunder’s Roar", "Electric Tension Fills the Air", "A Thunderstorm is Brewing"};
 
+        if (world.isRaining() && !world.isThundering()) {
+            setClear(world);
+            serverUser.sendMessage(Text.literal(clearRainMsgs[randomInt]), true);
+        } else if (world.isThundering()) {
+            setClear(world);
+            serverUser.sendMessage(Text.literal(clearThunderMsgs[randomInt]), true);
+        } else {
+            boolean thunderChance = world.random.nextInt(3) > 0;
+            setWeather(world, thunderChance);
+            serverUser.sendMessage(Text.literal(thunderChance ? startRainMsgs[randomInt] : startThunderMsgs[randomInt]), true);
+        }
+    }
+
+    private void setWeather(ServerWorld world, boolean makeRain) {
+        if (makeRain) {
+            setRain(world);
+        } else {
+            setThunder(world);
+        }
     }
 
     private static int processDuration(ServerWorld world, IntProvider provider) {

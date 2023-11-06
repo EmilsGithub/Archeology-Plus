@@ -28,7 +28,6 @@ public class ModelDataGen extends FabricModelProvider {
 
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.RED_SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
-
     }
 
     @Override
@@ -45,12 +44,19 @@ public class ModelDataGen extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FLIGHT_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHOMP_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(ModItems.REVIVE_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BUTTERFLY_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.NAUTILUS_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HALO_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DEVIL_POTTERY_SHERD, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.SUN_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.MOON_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.SEASHELL_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAIN_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.FIRE_IDOL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.HARVEST_IDOL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.GLIDING_IDOL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.WITHER_IDOL, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHISEL, Models.HANDHELD);
     }

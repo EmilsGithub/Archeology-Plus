@@ -1,6 +1,7 @@
 package net.emilsg.archeologyplus.register.blocks.custom;
 
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -8,6 +9,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -85,6 +87,9 @@ public class LootPotBlock extends Block implements Waterloggable {
     @Override
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
+        PlayerEntity player = ctx.getPlayer();
+        if(player != null) player.sendMessage(Text.literal(String.valueOf(ctx.getPlayerLookDirection())));
+
         int placementPosition = 0;
         boolean bl = ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER;
 
