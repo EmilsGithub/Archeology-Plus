@@ -111,8 +111,8 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).addTemporaryModifier(RESISTANCE_MODIFIER);
     }
     private void removeModifiers() {
-        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).removeModifier(SPEED_MODIFIER);
-        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).removeModifier(RESISTANCE_MODIFIER);
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED)).removeModifier(SPEED_MODIFIER.getId());
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS)).removeModifier(RESISTANCE_MODIFIER.getId());
     }
     private void applySlowFalling() {
         this.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0));

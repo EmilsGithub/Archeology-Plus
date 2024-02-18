@@ -88,7 +88,7 @@ public class LootPotBlock extends Block implements Waterloggable {
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         PlayerEntity player = ctx.getPlayer();
-        if(player != null) player.sendMessage(Text.literal(String.valueOf(ctx.getPlayerLookDirection())));
+        //if(player != null) player.sendMessage(Text.literal(String.valueOf(ctx.getPlayerLookDirection())));
 
         int placementPosition = 0;
         boolean bl = ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER;

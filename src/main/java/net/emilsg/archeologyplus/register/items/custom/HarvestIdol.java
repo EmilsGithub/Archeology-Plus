@@ -105,7 +105,7 @@ public class HarvestIdol extends DescriptionItem {
 
     public static boolean useOnFertilizable(World world, BlockPos cropPos, BlockState state) {
         if (state.getBlock() instanceof Fertilizable fertilizable) {
-            if (fertilizable.isFertilizable(world, cropPos, state, world.isClient)) {
+            if (fertilizable.isFertilizable(world, cropPos, state)) {
                 if (world instanceof ServerWorld) {
                     if (fertilizable.canGrow(world, world.random, cropPos, state)) {
                         fertilizable.grow((ServerWorld)world, world.random, cropPos.up(), state);
