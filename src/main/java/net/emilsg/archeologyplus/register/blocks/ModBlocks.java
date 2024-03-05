@@ -20,8 +20,6 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block TEST_BLOCK = registerBlock("test_block", new Block(FabricBlockSettings.copy(Blocks.SOUL_SAND).sounds(BlockSoundGroup.SUSPICIOUS_SAND).pistonBehavior(PistonBehavior.DESTROY)));
-
     public static final Block SUSPICIOUS_SOUL_SAND = registerBlock("suspicious_soul_sand", new BrushableBlock(Blocks.SOUL_SAND, FabricBlockSettings.copy(Blocks.SOUL_SAND).sounds(BlockSoundGroup.SUSPICIOUS_SAND).pistonBehavior(PistonBehavior.DESTROY), SoundEvents.ITEM_BRUSH_BRUSHING_SAND, SoundEvents.ITEM_BRUSH_BRUSHING_SAND_COMPLETE));
     public static final Block SUSPICIOUS_RED_SAND = registerBlock("suspicious_red_sand", new BrushableBlock(Blocks.RED_SAND, FabricBlockSettings.copy(Blocks.RED_SAND).sounds(BlockSoundGroup.SUSPICIOUS_SAND).pistonBehavior(PistonBehavior.DESTROY), SoundEvents.ITEM_BRUSH_BRUSHING_SAND, SoundEvents.ITEM_BRUSH_BRUSHING_SAND_COMPLETE));
     public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new BrushableBlock(Blocks.DIRT, FabricBlockSettings.copy(Blocks.DIRT).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL).pistonBehavior(PistonBehavior.DESTROY), SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL_COMPLETE));
@@ -33,6 +31,10 @@ public class ModBlocks {
 
     public static final Block SANDSTONE_HIEROGLYPHS = registerBlock("sandstone_hieroglyphs", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.SMOOTH_SANDSTONE)));
     public static final Block RED_SANDSTONE_HIEROGLYPHS = registerBlock("red_sandstone_hieroglyphs", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.SMOOTH_RED_SANDSTONE)));
+
+    public static final Block STONE_BRICK_WRITINGS = registerBlock("stone_brick_writings", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.STONE_BRICKS)));
+    public static final Block MOSSY_STONE_BRICK_WRITINGS = registerBlock("mossy_stone_brick_writings", new HieroglyphBlock(FabricBlockSettings.copy(Blocks.MOSSY_STONE_BRICKS)));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

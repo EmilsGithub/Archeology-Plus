@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ArcheologyPlus implements ModInitializer {
-
+	public static final String MOD_VERSION = "2.1.0";
 	public static final String MOD_ID = "archeologyplus";
     public static final Logger LOGGER = LoggerFactory.getLogger("archeologyplus");
 

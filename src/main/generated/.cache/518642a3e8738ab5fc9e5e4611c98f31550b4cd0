@@ -1,5 +1,9 @@
-// 1.20.1	2023-10-11T12:03:57.0504143	Archeology Plus/Recipes
-cd416c71cd36332dc449601f56971df70de0a587 data\archeologyplus\advancements\recipes\building_blocks\loot_pot.json
+// 1.20.1	2024-03-03T17:56:58.0384075	Archeology Plus/Recipes
+ae2c07424ed7e7985d3fccd00fa128b028d33db0 data\archeologyplus\advancements\recipes\building_blocks\mossy_stone_brick_writings_from_moss.json
+757e9cc116cd37b924415cf97e8143a2f576cb83 data\archeologyplus\advancements\recipes\building_blocks\loot_pot.json
+c4de1621da20b59720ec6cf7ab5c673d12044169 data\archeologyplus\recipes\mossy_stone_brick_writings_from_vine.json
 314494a78e54e9e9ce6bd8d27336195457d36301 data\archeologyplus\recipes\loot_pot.json
 ebe2c739909048952a3486e0de71ce500099bac2 data\archeologyplus\recipes\chisel.json
-3de58939f1f2e39df2d78dbafa2219507367c058 data\archeologyplus\advancements\recipes\tools\chisel.json
+90a8629655f25b5638d196cff6d613dd47489753 data\archeologyplus\advancements\recipes\tools\chisel.json
+e0c3f9b0a658fa7bafde31fe684f84ca7293c84b data\archeologyplus\advancements\recipes\building_blocks\mossy_stone_brick_writings_from_vine.json
+f7603faf583cf10480b8c38008e7a3dedd995d34 data\archeologyplus\recipes\mossy_stone_brick_writings_from_moss.json

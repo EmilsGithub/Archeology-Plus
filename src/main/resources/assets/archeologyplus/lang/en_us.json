@@ -36,6 +36,8 @@
   "block.archeologyplus.sandstone_hieroglyphs": "Sandstone Hieroglyphs",
   "block.archeologyplus.crumbling_red_sandstone": "Crumbling Red Sandstone",
   "block.archeologyplus.red_sandstone_hieroglyphs": "Red Sandstone Hieroglyphs",
+  "block.archeologyplus.stone_brick_writings": "Stone Brick Writings",
+  "block.archeologyplus.mossy_stone_brick_writings": "Mossy Stone Brick Writings",
 
   "description.item.archeologyplus.sun_idol": "Buffs the Holder during Daytime",
   "description.item.archeologyplus.moon_idol": "Buffs the Holder during Nighttime",
@@ -51,7 +53,7 @@
   "subdescription.item.archeologyplus.sun_idol": "Buffs the Holders Resistance and Movement Speed during the Day",
   "subdescription.item.archeologyplus.moon_idol": "Buffs the Holders Resistance and Movement Speed during the Night",
   "subdescription.item.archeologyplus.seashell_idol": "Breathe Underwater a bit Longer and Mine a bit Faster",
-  "subdescription.item.archeologyplus.chisel": "Chisels different kinds of Sandstone into Hieroglyphs and Cycles the State of Crumbling Blocks",
+  "subdescription.item.archeologyplus.chisel": "Can be Used to Chisel certain Blocks and Cycle Crumbling Block's Block-States",
   "subdescription.item.archeologyplus.harvest_idol": "Functions like a Hoe while being able to Grow Plants, slowly Regenerates Durability",
   "description.shift.prompt": "Hold SHIFT for More"
 }

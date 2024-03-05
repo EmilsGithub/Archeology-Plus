@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "archeologyplus:block/stone_brick_writings_end_3",
+    "side": "archeologyplus:block/stone_brick_writings_3"
+  }
+}

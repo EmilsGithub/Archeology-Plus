@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_stone_brick_writings",
+  "ingredients": [
+    {
+      "item": "archeologyplus:stone_brick_writings"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "archeologyplus:mossy_stone_brick_writings"
+  }
+}

@@ -30,37 +30,51 @@ public class ChiselItem extends DescriptionItem {
         World world = ctx.getWorld();
         PlayerEntity player = ctx.getPlayer();
 
-        if(state.getBlock() instanceof HieroglyphBlock) {
-            if(world.isClient) {
+        if(state.getBlock() instanceof HieroglyphBlock || isSandstoneVariant(state) || isRedSandstoneVariant(state) || state.isOf(Blocks.STONE_BRICKS) || state.isOf(Blocks.MOSSY_STONE_BRICKS) || isCrumblingVariant(state)) {
+            if (world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
             }
-            world.setBlockState(pos, state.cycle(ModProperties.VARIANT_3), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, ctx);
-        } else if (state.isOf(Blocks.SMOOTH_SANDSTONE) || state.isOf(Blocks.SANDSTONE) || state.isOf(Blocks.CUT_SANDSTONE) || state.isOf(Blocks.CHISELED_SANDSTONE)) {
-            if(world.isClient) {
-                world.addBlockBreakParticles(pos, state);
-                return ActionResult.SUCCESS;
+
+            if (state.getBlock() instanceof HieroglyphBlock) {
+                return updateBlockStateAndChisel(world, pos, state, state.cycle(ModProperties.VARIANT_3), player, ctx);
+            } else if (isSandstoneVariant(state)) {
+                return updateBlockStateAndChisel(world, pos, state, ModBlocks.SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
+            } else if (isRedSandstoneVariant(state)) {
+                return updateBlockStateAndChisel(world, pos, state, ModBlocks.RED_SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
+            } else if (state.isOf(Blocks.STONE_BRICKS)) {
+                return updateBlockStateAndChisel(world, pos, state, ModBlocks.STONE_BRICK_WRITINGS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
+            } else if (state.isOf(Blocks.MOSSY_STONE_BRICKS)) {
+                return updateBlockStateAndChisel(world, pos, state, ModBlocks.MOSSY_STONE_BRICK_WRITINGS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
+            }  else if (isCrumblingVariant(state)) {
+                return updateBlockStateAndChisel(world, pos, state, state.cycle(ModProperties.CRUMBLE_LEVEL), player, ctx);
             }
-            world.setBlockState(pos, ModBlocks.SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, ctx);
-        } else if (state.isOf(Blocks.SMOOTH_RED_SANDSTONE) || state.isOf(Blocks.RED_SANDSTONE) || state.isOf(Blocks.CUT_RED_SANDSTONE) || state.isOf(Blocks.CHISELED_RED_SANDSTONE)) {
-            if(world.isClient) {
-                world.addBlockBreakParticles(pos, state);
-                return ActionResult.SUCCESS;
-            }
-            world.setBlockState(pos, ModBlocks.RED_SANDSTONE_HIEROGLYPHS.getDefaultState().with(ModProperties.VARIANT_3, world.getRandom().nextInt(4)), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, ctx);
-        } else if (state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE)) {
-            if(world.isClient) {
-                world.addBlockBreakParticles(pos, state);
-                return ActionResult.SUCCESS;
-            }
-            world.setBlockState(pos, state.cycle(ModProperties.CRUMBLE_LEVEL), Block.NOTIFY_ALL);
-            return chiselBlock(world, pos, player, ctx);
         }
 
         return ActionResult.PASS;
+    }
+
+    private boolean isSandstoneVariant(BlockState state) {
+        return state.isOf(Blocks.SMOOTH_SANDSTONE) || state.isOf(Blocks.SANDSTONE) ||
+                state.isOf(Blocks.CUT_SANDSTONE) || state.isOf(Blocks.CHISELED_SANDSTONE);
+    }
+
+    private boolean isRedSandstoneVariant(BlockState state) {
+        return state.isOf(Blocks.SMOOTH_RED_SANDSTONE) || state.isOf(Blocks.RED_SANDSTONE) ||
+                state.isOf(Blocks.CUT_RED_SANDSTONE) || state.isOf(Blocks.CHISELED_RED_SANDSTONE);
+    }
+
+    private boolean isCrumblingVariant(BlockState state) {
+        return state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE);
+    }
+
+    private int getRandomVariant(World world) {
+        return world.getRandom().nextInt(4);
+    }
+
+    private ActionResult updateBlockStateAndChisel(World world, BlockPos pos, BlockState currentState, BlockState newState, PlayerEntity player, ItemUsageContext ctx) {
+        world.setBlockState(pos, newState, Block.NOTIFY_ALL);
+        return chiselBlock(world, pos, player, ctx);
     }
 
     private ActionResult chiselBlock(World world, BlockPos pos, PlayerEntity player, ItemUsageContext context) {

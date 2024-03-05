@@ -1,0 +1,25 @@
+{
+  "name": "archeologyplus:jungle_dungeon_room_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 10,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_small_room",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_side_room_connection",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

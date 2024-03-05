@@ -3,6 +3,7 @@ package net.emilsg.archeologyplus.register.blocks;
 import net.emilsg.archeologyplus.ArcheologyPlus;
 import net.emilsg.archeologyplus.mixin.DecoratedPotPatternsAccessor;
 import net.emilsg.archeologyplus.register.items.ModItems;
+import net.emilsg.archeologyplus.register.items.custom.SherdItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -10,38 +11,37 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModPottery {
 
     private static final Map<Item, RegistryKey<String>> SHERD_TO_PATTERN = new HashMap<>();
 
-    private static final Map<Item, String> ITEM_TO_PATTERN_NAME;
+    public static final SherdItem[] SHERD_ITEMS = {
+            (SherdItem) ModItems.LOADER_POTTERY_SHERD,
+            (SherdItem) ModItems.MASTER_POTTERY_SHERD,
+            (SherdItem) ModItems.MERCHANT_POTTERY_SHERD,
+            (SherdItem) ModItems.HOP_POTTERY_SHERD,
+            (SherdItem) ModItems.LIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.MIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.FLIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.SIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.FRIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.NIGHT_POTTERY_SHERD,
+            (SherdItem) ModItems.CHOMP_POTTERY_SHERD,
+            (SherdItem) ModItems.REVIVE_POTTERY_SHERD,
+            (SherdItem) ModItems.BUTTERFLY_POTTERY_SHERD,
+            (SherdItem) ModItems.NAUTILUS_POTTERY_SHERD,
+            (SherdItem) ModItems.HALO_POTTERY_SHERD,
+            (SherdItem) ModItems.DEVIL_POTTERY_SHERD
+    };
 
     static {
-        Map<Item, String> map = new HashMap<>();
-        map.put(ModItems.LOADER_POTTERY_SHERD, "loader");
-        map.put(ModItems.MASTER_POTTERY_SHERD, "master");
-        map.put(ModItems.MERCHANT_POTTERY_SHERD, "merchant");
-        map.put(ModItems.HOP_POTTERY_SHERD, "hop");
-        map.put(ModItems.SIGHT_POTTERY_SHERD, "sight");
-        map.put(ModItems.NIGHT_POTTERY_SHERD, "night");
-        map.put(ModItems.MIGHT_POTTERY_SHERD, "might");
-        map.put(ModItems.FRIGHT_POTTERY_SHERD, "fright");
-        map.put(ModItems.LIGHT_POTTERY_SHERD, "light");
-        map.put(ModItems.FLIGHT_POTTERY_SHERD, "flight");
-        map.put(ModItems.CHOMP_POTTERY_SHERD, "chomp");
-        map.put(ModItems.REVIVE_POTTERY_SHERD, "revive");
-        map.put(ModItems.BUTTERFLY_POTTERY_SHERD, "butterfly");
-        map.put(ModItems.NAUTILUS_POTTERY_SHERD, "nautilus");
-        map.put(ModItems.HALO_POTTERY_SHERD, "halo");
-        map.put(ModItems.DEVIL_POTTERY_SHERD, "devil");
-        ITEM_TO_PATTERN_NAME = Collections.unmodifiableMap(map);
-
-
-        for (Map.Entry<Item, String> entry : ITEM_TO_PATTERN_NAME.entrySet()) {
-            RegistryKey<String> registryKey = withModPath(entry.getValue() + "_pottery_pattern");
-            SHERD_TO_PATTERN.put(entry.getKey(), registryKey);
+        for (SherdItem sherdItem : SHERD_ITEMS) {
+            String patternName = sherdItem.getPatternName();
+            RegistryKey<String> registryKey = withModPath(patternName + "_pottery_pattern");
+            SHERD_TO_PATTERN.put(sherdItem, registryKey);
         }
     }
 

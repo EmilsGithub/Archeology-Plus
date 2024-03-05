@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "variant=0": {
+      "model": "archeologyplus:block/stone_brick_writings_0"
+    },
+    "variant=1": {
+      "model": "archeologyplus:block/stone_brick_writings_1"
+    },
+    "variant=2": {
+      "model": "archeologyplus:block/stone_brick_writings_2"
+    },
+    "variant=3": {
+      "model": "archeologyplus:block/stone_brick_writings_3"
+    }
+  }
+}

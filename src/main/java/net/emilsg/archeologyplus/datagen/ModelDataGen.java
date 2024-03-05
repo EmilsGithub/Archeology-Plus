@@ -28,6 +28,9 @@ public class ModelDataGen extends FabricModelProvider {
 
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.RED_SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
+        registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.STONE_BRICK_WRITINGS, ModProperties.VARIANT_3);
+        registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.MOSSY_STONE_BRICK_WRITINGS, ModProperties.VARIANT_3);
+
     }
 
     @Override

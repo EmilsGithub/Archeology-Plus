@@ -49,7 +49,7 @@ public class CrumblingBlock extends Block {
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         ticker = ticker - (world.random.nextInt(1) + 1);
         if (world.random.nextBoolean() && !world.isClient && ticker <= 0) {
-            breakOrCycleState(world, pos, state, 1, false);
+            breakOrCycleState(world, pos, state, world.random.nextInt(1) + 1, false);
             ticker = 16;
         }
     }

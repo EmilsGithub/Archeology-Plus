@@ -1,0 +1,43 @@
+{
+  "name": "archeologyplus:jungle_dungeon_side_connection_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 12,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_side_connection_one",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 12,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_side_connection_two",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_side_connection_three",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon_room_cap",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

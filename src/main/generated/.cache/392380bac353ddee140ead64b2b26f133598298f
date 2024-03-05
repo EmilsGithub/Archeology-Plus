@@ -1,5 +1,7 @@
-// 1.20.1	2023-10-11T12:03:57.0509145	Archeology Plus/Block Loot Tables
+// 1.20.1	2024-03-03T17:56:58.038908	Archeology Plus/Block Loot Tables
+21a03978571174b7b5d898fd68db2402eabf231b data\archeologyplus\loot_tables\blocks\stone_brick_writings.json
 78802097c2c8479cd5d8699360897806bcbfc82e data\archeologyplus\loot_tables\blocks\sandstone_hieroglyphs.json
 b858f2a5429850a4474ded1351d029aaf028f4a2 data\archeologyplus\loot_tables\blocks\red_sandstone_hieroglyphs.json
 ebb4dd3284172596cab7d0df28b081894097e323 data\archeologyplus\loot_tables\blocks\crumbling_red_sandstone.json
+82f774b68fc9e68ae81f184f9bb83aa444abd1ca data\archeologyplus\loot_tables\blocks\mossy_stone_brick_writings.json
 3c11bde2dc1a710e3e19118f28301df2263cf097 data\archeologyplus\loot_tables\blocks\crumbling_sandstone.json

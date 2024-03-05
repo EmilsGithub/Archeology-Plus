@@ -52,6 +52,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SANDSTONE_HIEROGLYPHS);
                         entries.add(ModBlocks.CRUMBLING_RED_SANDSTONE);
                         entries.add(ModBlocks.RED_SANDSTONE_HIEROGLYPHS);
+                        entries.add(ModBlocks.STONE_BRICK_WRITINGS);
+                        entries.add(ModBlocks.MOSSY_STONE_BRICK_WRITINGS);
+
 
                     }).build());
 

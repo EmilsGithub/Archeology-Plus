@@ -22,7 +22,8 @@ public class BlockTagDataGen extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(
                     ModBlocks.CRUMBLING_SANDSTONE, ModBlocks.CRUMBLING_RED_SANDSTONE,
-                    ModBlocks.SANDSTONE_HIEROGLYPHS, ModBlocks.RED_SANDSTONE_HIEROGLYPHS
+                    ModBlocks.SANDSTONE_HIEROGLYPHS, ModBlocks.RED_SANDSTONE_HIEROGLYPHS,
+                    ModBlocks.STONE_BRICK_WRITINGS
                 );
 
         getOrCreateTagBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)

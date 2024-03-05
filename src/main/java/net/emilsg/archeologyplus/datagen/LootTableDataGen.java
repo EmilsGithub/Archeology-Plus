@@ -16,5 +16,7 @@ public class LootTableDataGen extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CRUMBLING_RED_SANDSTONE);
         addDrop(ModBlocks.RED_SANDSTONE_HIEROGLYPHS);
         addDrop(ModBlocks.SANDSTONE_HIEROGLYPHS);
+        addDrop(ModBlocks.STONE_BRICK_WRITINGS);
+        addDrop(ModBlocks.MOSSY_STONE_BRICK_WRITINGS);
     }
 }

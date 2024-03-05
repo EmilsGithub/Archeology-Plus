@@ -1,0 +1,17 @@
+{
+  "name": "archeologyplus:jungle_dungeon_pool",
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+      "weight": 1,
+
+      "element": {
+        "location": "archeologyplus:jungle_dungeon",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
