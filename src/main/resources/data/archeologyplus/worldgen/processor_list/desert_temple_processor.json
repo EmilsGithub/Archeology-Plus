@@ -13,7 +13,10 @@
             "block": "archeologyplus:loot_pot"
           },
           "output_state": {
-            "Name": "minecraft:air"
+            "Name": "archeologyplus:medium_loot_pot",
+            "Properties": {
+              "drops_loot": "true"
+            }
           }
         },
         {

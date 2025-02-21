@@ -7,7 +7,7 @@
       "weight": 1,
 
       "element": {
-        "location": "archeologyplus:jungle_dungeon_four_way_connection",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_four_way_connection",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

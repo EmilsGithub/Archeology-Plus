@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "end=true": {
+      "model": "archeologyplus:block/rope_end"
+    },
+    "end=false": {
+      "model": "archeologyplus:block/rope_full"
+    }
+  }
+}

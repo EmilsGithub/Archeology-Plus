@@ -2,6 +2,7 @@ package net.emilsg.archeologyplus.register.items.custom;
 
 import net.emilsg.archeologyplus.register.blocks.ModBlocks;
 import net.emilsg.archeologyplus.register.blocks.custom.HieroglyphBlock;
+import net.emilsg.archeologyplus.register.blocks.custom.StepBreakBlock;
 import net.emilsg.archeologyplus.util.ModProperties;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -30,7 +31,7 @@ public class ChiselItem extends DescriptionItem {
         World world = ctx.getWorld();
         PlayerEntity player = ctx.getPlayer();
 
-        if(state.getBlock() instanceof HieroglyphBlock || isSandstoneVariant(state) || isRedSandstoneVariant(state) || state.isOf(Blocks.STONE_BRICKS) || state.isOf(Blocks.MOSSY_STONE_BRICKS) || isCrumblingVariant(state)) {
+        if (state.getBlock() instanceof HieroglyphBlock || isSandstoneVariant(state) || isRedSandstoneVariant(state) || state.isOf(Blocks.STONE_BRICKS) || state.isOf(Blocks.MOSSY_STONE_BRICKS) || isCrumblingVariant(state) || state.getBlock() instanceof StepBreakBlock) {
             if (world.isClient) {
                 world.addBlockBreakParticles(pos, state);
                 return ActionResult.SUCCESS;
@@ -46,8 +47,10 @@ public class ChiselItem extends DescriptionItem {
                 return updateBlockStateAndChisel(world, pos, state, ModBlocks.STONE_BRICK_WRITINGS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
             } else if (state.isOf(Blocks.MOSSY_STONE_BRICKS)) {
                 return updateBlockStateAndChisel(world, pos, state, ModBlocks.MOSSY_STONE_BRICK_WRITINGS.getDefaultState().with(ModProperties.VARIANT_3, getRandomVariant(world)), player, ctx);
-            }  else if (isCrumblingVariant(state)) {
+            } else if (isCrumblingVariant(state)) {
                 return updateBlockStateAndChisel(world, pos, state, state.cycle(ModProperties.CRUMBLE_LEVEL), player, ctx);
+            } else if (state.getBlock() instanceof StepBreakBlock) {
+                return updateBlockStateAndChisel(world, pos, state, state.cycle(ModProperties.WILL_BREAK), player, ctx);
             }
         }
 
@@ -65,7 +68,7 @@ public class ChiselItem extends DescriptionItem {
     }
 
     private boolean isCrumblingVariant(BlockState state) {
-        return state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE);
+        return state.isOf(ModBlocks.CRUMBLING_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_RED_SANDSTONE) || state.isOf(ModBlocks.CRUMBLING_STONE_BRICKS) || state.isOf(ModBlocks.CRUMBLING_MOSSY_STONE_BRICKS);
     }
 
     private int getRandomVariant(World world) {
@@ -80,7 +83,9 @@ public class ChiselItem extends DescriptionItem {
     private ActionResult chiselBlock(World world, BlockPos pos, PlayerEntity player, ItemUsageContext context) {
         world.playSound(null, pos, SoundEvents.BLOCK_STONE_PLACE, SoundCategory.BLOCKS, 1.25f, 2.0f);
         ItemStack itemStack = context.getStack();
-        if (player instanceof ServerPlayerEntity) itemStack.damage(1, player, (p) -> {p.sendToolBreakStatus(context.getHand());});
+        if (player instanceof ServerPlayerEntity) itemStack.damage(1, player, (p) -> {
+            p.sendToolBreakStatus(context.getHand());
+        });
         return ActionResult.SUCCESS;
     }
 }

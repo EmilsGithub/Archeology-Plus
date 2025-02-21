@@ -1,12 +1,15 @@
 package net.emilsg.archeologyplus.datagen;
 
+import net.emilsg.archeologyplus.ArcheologyPlus;
 import net.emilsg.archeologyplus.register.blocks.ModBlocks;
 import net.emilsg.archeologyplus.register.items.ModItems;
 import net.emilsg.archeologyplus.util.ModProperties;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.Identifier;
 
@@ -17,6 +20,14 @@ public class ModelDataGen extends FabricModelProvider {
         super(output);
     }
 
+    public static BlockStateSupplier createBooleanState(Block block, BooleanProperty property, Identifier isTrueModel, Identifier isFalseModel) {
+        return VariantsBlockStateSupplier.create(block)
+                .coordinate(BlockStateVariantMap.create(property)
+                        .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, isTrueModel))
+                        .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, isFalseModel))
+                );
+    }
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerBrushableBlock(ModBlocks.SUSPICIOUS_SOUL_SAND);
@@ -25,12 +36,18 @@ public class ModelDataGen extends FabricModelProvider {
 
         registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_SANDSTONE, ModProperties.CRUMBLE_LEVEL);
         registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_RED_SANDSTONE, ModProperties.CRUMBLE_LEVEL);
+        registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_STONE_BRICKS, ModProperties.CRUMBLE_LEVEL);
+        registerIntPropertyCubeAllBlock(blockStateModelGenerator, ModBlocks.CRUMBLING_MOSSY_STONE_BRICKS, ModProperties.CRUMBLE_LEVEL);
 
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.RED_SANDSTONE_HIEROGLYPHS, ModProperties.VARIANT_3);
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.STONE_BRICK_WRITINGS, ModProperties.VARIANT_3);
         registerIntPropertyCubeColumnBlock(blockStateModelGenerator, ModBlocks.MOSSY_STONE_BRICK_WRITINGS, ModProperties.VARIANT_3);
 
+        registerBooleanPropertyBlock(blockStateModelGenerator, ModBlocks.STONE_STEP_BREAK_BLOCK, ModProperties.WILL_BREAK);
+        registerBooleanPropertyBlock(blockStateModelGenerator, ModBlocks.MOSSY_STONE_STEP_BREAK_BLOCK, ModProperties.WILL_BREAK);
+
+        registerFakeBlock(blockStateModelGenerator, ModBlocks.FAKE_BLOCK, Blocks.STONE);
     }
 
     @Override
@@ -60,8 +77,19 @@ public class ModelDataGen extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HARVEST_IDOL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.GLIDING_IDOL, Models.GENERATED);
         itemModelGenerator.register(ModItems.WITHER_IDOL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IDOL_OF_PROTECTION, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.ROPE_BUNDLE, Models.GENERATED);
+        itemModelGenerator.register(ModBlocks.ROPE.asItem(), Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHISEL, Models.HANDHELD);
+    }
+
+    public final void registerFakeBlock(BlockStateModelGenerator generator, Block block, Block reference) {
+        Identifier isTrue = generator.createSubModel(block, "", Models.CUBE_ALL, id -> referenceTextureMap(reference));
+        Identifier isFalse = Identifier.of(ArcheologyPlus.MOD_ID,"block/fake_block_hidden");
+        generator.blockStateCollector.accept(createBooleanState(block, ModProperties.HIDDEN, isFalse, isTrue));
+        generator.registerParentedItemModel(block, isFalse);
     }
 
     public final void registerIntPropertyCubeAllBlock(BlockStateModelGenerator blockStateModelGenerator, Block block, IntProperty property) {
@@ -84,4 +112,15 @@ public class ModelDataGen extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, TextureMap.getSubId(block, "_" + Collections.max(property.getValues())));
     }
 
+    public final void registerBooleanPropertyBlock(BlockStateModelGenerator generator, Block block, BooleanProperty property) {
+        Identifier isTrue = generator.createSubModel(block, "_true", Models.CUBE_ALL, TextureMap::all);
+        Identifier isFalse = generator.createSubModel(block, "_false", Models.CUBE_ALL, TextureMap::all);
+        generator.blockStateCollector.accept(createBooleanState(block, property, isTrue, isFalse));
+        generator.registerParentedItemModel(block, isTrue);
+    }
+
+    public static TextureMap referenceTextureMap(Block reference) {
+        Identifier planks = TextureMap.getId(reference);
+        return new TextureMap().put(TextureKey.ALL, planks);
+    }
 }

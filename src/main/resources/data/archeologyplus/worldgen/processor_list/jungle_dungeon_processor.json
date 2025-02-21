@@ -9,6 +9,50 @@
           },
           "input_predicate": {
             "predicate_type": "minecraft:random_block_match",
+            "probability": 0.25,
+            "block": "archeologyplus:loot_pot"
+          },
+          "output_state": {
+            "Name": "archeologyplus:medium_loot_pot",
+            "Properties": {
+              "drops_loot": "true"
+            }
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "minecraft:stone_bricks"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_stone_bricks"
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "minecraft:mossy_stone_bricks"
+          },
+          "output_state": {
+            "Name": "minecraft:stone_bricks"
+          }
+        },
+
+
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
             "probability": 0.5,
             "block": "minecraft:glow_lichen"
           },
@@ -61,11 +105,18 @@
           },
           "input_predicate": {
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.25,
-            "block": "archeologyplus:loot_pot"
+            "probability": 0.05,
+            "block": "minecraft:gravel"
           },
           "output_state": {
-            "Name": "minecraft:air"
+            "Name": "minecraft:suspicious_gravel",
+            "Properties": {
+              "dusted": "0"
+            }
+          },
+          "block_entity_modifier": {
+            "type": "minecraft:append_loot",
+            "loot_table": "archeologyplus:archaeology/jungle_dungeon"
           }
         },
         {
@@ -74,20 +125,118 @@
           },
           "input_predicate": {
             "predicate_type": "minecraft:random_block_match",
-            "probability": 0.05,
-            "block": "minecraft:gravel"
+            "probability": 0.1,
+            "block": "minecraft:dirt"
           },
           "output_state": {
-            "Name": "minecraft:suspicious_gravel",
+            "Name": "archeologyplus:suspicious_dirt",
             "Properties": {
-              "dusted": 0
+              "dusted": "0"
             }
           },
           "block_entity_modifier": {
             "type": "minecraft:append_loot",
-            "loot_table": "archeologyplus:archaeology/desert_bone"
+            "loot_table": "archeologyplus:archaeology/jungle_dungeon"
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "archeologyplus:crumbling_stone_bricks"
+          },
+          "output_state": {
+            "Name": "archeologyplus:crumbling_stone_bricks",
+            "Properties": {
+              "crumble_level": "1"
+            }
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "archeologyplus:crumbling_stone_bricks"
+          },
+          "output_state": {
+            "Name": "archeologyplus:crumbling_stone_bricks",
+            "Properties": {
+              "crumble_level": "2"
+            }
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "archeologyplus:crumbling_mossy_stone_bricks"
+          },
+          "output_state": {
+            "Name": "archeologyplus:crumbling_mossy_stone_bricks",
+            "Properties": {
+              "crumble_level": "1"
+            }
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.5,
+            "block": "archeologyplus:crumbling_mossy_stone_bricks"
+          },
+          "output_state": {
+            "Name": "archeologyplus:crumbling_mossy_stone_bricks",
+            "Properties": {
+              "crumble_level": "2"
+            }
+          }
+        },
+
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.75,
+            "block": "archeologyplus:stone_step_break_block"
+          },
+          "output_state": {
+            "Name": "archeologyplus:stone_step_break_block",
+            "Properties": {
+              "will_break": "true"
+            }
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.75,
+            "block": "archeologyplus:mossy_stone_step_break_block"
+          },
+          "output_state": {
+            "Name": "archeologyplus:mossy_stone_step_break_block",
+            "Properties": {
+              "will_break": "true"
+            }
           }
         }
+
       ]
     }
   ]

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:decorated_pot",
+      "nbt": "{BlockEntityTag:{id:\"minecraft:decorated_pot\",sherds:[\"minecraft:brick\",\"archeologyplus:loader_pottery_sherd\",\"minecraft:brick\",\"archeologyplus:loader_pottery_sherd\"]}}"
+    },
+    "title": {
+      "translate": "advancements.archeologyplus.root.title"
+    },
+    "description": {
+      "translate": "advancements.archeologyplus.root.description"
+    },
+    "background": "archeologyplus:textures/block/stone_brick_writings_0.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "spawn": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "spawn"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

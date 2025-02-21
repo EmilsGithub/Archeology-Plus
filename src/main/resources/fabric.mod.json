@@ -3,13 +3,22 @@
 	"id": "archeologyplus",
 	"version": "${version}",
 	"name": "Archeology Plus",
-	"description": "A 1.20+ mod that aims to add more content to the new Archeology feature.",
+	"description": "A 1.20+ mod that adds to the Archeology feature, while also adding Structures, Items, Blocks, etc. related to it.",
 	"authors": [
 		"EmilSG"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/archeology-plus",
+		"issues": "https://github.com/EmilsGithub/Archeology-Plus/issues",
 		"sources": "https://github.com/EmilsGithub/Archeology-Plus"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"Discord": "https://discord.gg/pDMkMxMREA"
+			},
+			"update_checker": true
+		}
 	},
 	"license": "MIT",
 	"icon": "assets/archeologyplus/icon.png",

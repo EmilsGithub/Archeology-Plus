@@ -8,18 +8,21 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
 
     /**
-      To add a new -Item with Pattern:
-      1. Make Item
-      2. Add Item to Tag
-      3. Add Item to ItemGroup
-      4. Add Item to ModPottery
-      6. Add Textures (For Item and Pattern) + Model (For Item (ModelDataGen))
-      7. Add Translation in Lang file
-    **/
+     * To add a new -Item with Pattern:
+     * 1. Make Item
+     * 2. Add Item to Tag
+     * 3. Add Item to ItemGroup
+     * 4. Add Item to ModPottery
+     * 6. Add Textures (For Item and Pattern) + Model (For Item (ModelDataGen))
+     * 7. Add Translation in Lang file
+     **/
+
+    public static final Item ROPE_BUNDLE = registerItem("rope_bundle", new RopeBundleItem(new FabricItemSettings().maxCount(16)));
 
     public static final Item LOADER_POTTERY_SHERD = registerItem("loader_pottery_sherd", new SherdItem(new FabricItemSettings(), "loader"));
     public static final Item MASTER_POTTERY_SHERD = registerItem("master_pottery_sherd", new SherdItem(new FabricItemSettings(), "master"));
@@ -38,16 +41,18 @@ public class ModItems {
     public static final Item HALO_POTTERY_SHERD = registerItem("halo_pottery_sherd", new SherdItem(new FabricItemSettings(), "halo"));
     public static final Item DEVIL_POTTERY_SHERD = registerItem("devil_pottery_sherd", new SherdItem(new FabricItemSettings(), "devil"));
 
-    public static final Item SUN_IDOL = registerItem("sun_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.sun_idol", Formatting.BLUE, "subdescription.item.archeologyplus.sun_idol", Formatting.YELLOW));
-    public static final Item MOON_IDOL = registerItem("moon_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.moon_idol", Formatting.BLUE, "subdescription.item.archeologyplus.moon_idol", Formatting.YELLOW));
-    public static final Item SEASHELL_IDOL = registerItem("seashell_idol", new DescriptionItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.seashell_idol", Formatting.BLUE, "subdescription.item.archeologyplus.seashell_idol", Formatting.YELLOW));
-    public static final Item RAIN_IDOL = registerItem("rain_idol", new RainIdolItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.rain_idol", Formatting.BLUE));
-    public static final Item FIRE_IDOL = registerItem("fire_idol", new FireIdolItem(new FabricItemSettings().maxCount(1), "description.item.archeologyplus.fire_idol", Formatting.BLUE));
-    public static final Item HARVEST_IDOL = registerItem("harvest_idol", new HarvestIdol(new FabricItemSettings().maxCount(1).maxDamage(64), "description.item.archeologyplus.harvest_idol", Formatting.BLUE, "subdescription.item.archeologyplus.harvest_idol", Formatting.YELLOW));
-    public static final Item GLIDING_IDOL = registerItem("gliding_idol", new DescriptionItem(new FabricItemSettings().maxCount(1).maxDamage(64), "description.item.archeologyplus.gliding_idol", Formatting.BLUE));
-    public static final Item WITHER_IDOL = registerItem("wither_idol", new DescriptionItem(new FabricItemSettings().maxCount(1).maxDamage(64), "description.item.archeologyplus.anchor_idol", Formatting.BLUE));
+    public static final Item SUN_IDOL = registerItem("sun_idol", new IdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE), "sun_idol", Formatting.BLUE, "sun_idol", Formatting.YELLOW));
+    public static final Item MOON_IDOL = registerItem("moon_idol", new IdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE), "moon_idol", Formatting.BLUE, "moon_idol", Formatting.YELLOW));
+    public static final Item SEASHELL_IDOL = registerItem("seashell_idol", new IdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE), "seashell_idol", Formatting.BLUE, "seashell_idol", Formatting.YELLOW));
+    public static final Item RAIN_IDOL = registerItem("rain_idol", new RainIdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE), "rain_idol", Formatting.BLUE));
+    public static final Item FIRE_IDOL = registerItem("fire_idol", new FireIdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE), "fire_idol", Formatting.BLUE));
+    public static final Item HARVEST_IDOL = registerItem("harvest_idol", new HarvestIdolItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE), "harvest_idol", Formatting.BLUE, "harvest_idol", Formatting.YELLOW));
+    public static final Item GLIDING_IDOL = registerItem("gliding_idol", new IdolItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE), "gliding_idol", Formatting.BLUE));
+    public static final Item WITHER_IDOL = registerItem("wither_idol", new IdolItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.RARE), "wither_idol", Formatting.BLUE));
+    public static final Item IDOL_OF_PROTECTION = registerItem("idol_of_protection", new IdolItem(new FabricItemSettings().maxCount(1).rarity(Rarity.EPIC), "idol_of_protection", Formatting.BLUE));
+    ;
 
-    public static final Item CHISEL = registerItem("chisel", new ChiselItem(new FabricItemSettings().maxDamage(432), "description.item.archeologyplus.chisel", Formatting.BLUE, "subdescription.item.archeologyplus.chisel", Formatting.YELLOW));
+    public static final Item CHISEL = registerItem("chisel", new ChiselItem(new FabricItemSettings().maxDamage(432), "chisel", Formatting.BLUE, "chisel", Formatting.YELLOW));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(ArcheologyPlus.MOD_ID, name), item);

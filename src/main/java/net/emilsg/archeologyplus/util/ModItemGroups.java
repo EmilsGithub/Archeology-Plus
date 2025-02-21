@@ -43,8 +43,17 @@ public class ModItemGroups {
                         entries.add(ModItems.HARVEST_IDOL);
                         entries.add(ModItems.GLIDING_IDOL);
                         entries.add(ModItems.WITHER_IDOL);
+                        entries.add(ModItems.IDOL_OF_PROTECTION);
+
+                        entries.add(ModBlocks.ROPE);
+                        entries.add(ModItems.ROPE_BUNDLE);
 
                         entries.add(ModBlocks.LOOT_POT);
+                        entries.add(ModBlocks.MEDIUM_LOOT_POT);
+
+                        entries.add(ModBlocks.SPIKE_TRAP);
+                        entries.add(ModBlocks.ARCHEOLOGY_TABLE);
+
                         entries.add(ModBlocks.SUSPICIOUS_DIRT);
                         entries.add(ModBlocks.SUSPICIOUS_RED_SAND);
                         entries.add(ModBlocks.SUSPICIOUS_SOUL_SAND);
@@ -52,8 +61,12 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SANDSTONE_HIEROGLYPHS);
                         entries.add(ModBlocks.CRUMBLING_RED_SANDSTONE);
                         entries.add(ModBlocks.RED_SANDSTONE_HIEROGLYPHS);
+                        entries.add(ModBlocks.CRUMBLING_STONE_BRICKS);
+                        entries.add(ModBlocks.CRUMBLING_MOSSY_STONE_BRICKS);
                         entries.add(ModBlocks.STONE_BRICK_WRITINGS);
                         entries.add(ModBlocks.MOSSY_STONE_BRICK_WRITINGS);
+                        entries.add(ModBlocks.STONE_STEP_BREAK_BLOCK);
+                        entries.add(ModBlocks.MOSSY_STONE_STEP_BREAK_BLOCK);
 
 
                     }).build());

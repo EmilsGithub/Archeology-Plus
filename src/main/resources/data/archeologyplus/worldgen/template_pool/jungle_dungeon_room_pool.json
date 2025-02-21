@@ -4,9 +4,18 @@
 
   "elements": [
     {
-      "weight": 10,
+      "weight": 4,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_small_room",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_small_room_one",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_room_connection",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -15,7 +24,52 @@
     {
       "weight": 1,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_side_room_connection",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_room_connection_one",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_connector_room_pitfall",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_pitfall_loot_room",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_prison_connection_one",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_prison_connection_two",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_medium_room_one",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

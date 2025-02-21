@@ -10,7 +10,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "archeologyplus:light_pottery_sherd"
+          "name": "archeologyplus:flight_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeologyplus:devil_pottery_sherd"
         },
         {
           "type": "minecraft:item",

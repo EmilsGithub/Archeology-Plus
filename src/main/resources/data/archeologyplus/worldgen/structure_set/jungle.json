@@ -2,7 +2,7 @@
   "structures": [
     {
       "structure": "archeologyplus:statue_jungle",
-      "weight": 20
+      "weight": 25
     },
     {
       "structure": "archeologyplus:jungle_dungeon",
@@ -11,8 +11,8 @@
   ],
   "placement": {
     "salt": 547167541,
-    "spacing": 24,
-    "separation": 16,
+    "spacing": 28,
+    "separation": 20,
     "type": "minecraft:random_spread"
   }
 }

@@ -54,5 +54,7 @@ public class RecipeDataGen extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(ModBlocks.STONE_BRICK_WRITINGS), FabricRecipeProvider.conditionsFromItem(ModBlocks.STONE_BRICK_WRITINGS))
                 .criterion(FabricRecipeProvider.hasItem(Blocks.VINE), FabricRecipeProvider.conditionsFromItem(Blocks.VINE))
                 .offerTo(exporter, new Identifier(ArcheologyPlus.MOD_ID, FabricRecipeProvider.getRecipeName(ModBlocks.MOSSY_STONE_BRICK_WRITINGS) + "_from_vine"));
+
+        offerCompactingRecipe(exporter, RecipeCategory.MISC, ModItems.ROPE_BUNDLE, ModBlocks.ROPE, FabricRecipeProvider.hasItem(ModBlocks.ROPE));
     }
 }

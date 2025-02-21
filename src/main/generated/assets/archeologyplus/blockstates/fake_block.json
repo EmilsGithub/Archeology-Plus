@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hidden=false": {
+      "model": "archeologyplus:block/fake_block"
+    },
+    "hidden=true": {
+      "model": "archeologyplus:block/fake_block_hidden"
+    }
+  }
+}

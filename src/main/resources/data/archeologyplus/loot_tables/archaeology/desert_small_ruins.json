@@ -6,6 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "archeologyplus:master_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
           "name": "archeologyplus:night_pottery_sherd"
         },
         {

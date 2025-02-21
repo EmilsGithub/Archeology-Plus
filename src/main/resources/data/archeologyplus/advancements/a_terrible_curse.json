@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "archeologyplus:sandstone_hieroglyphs"
+    },
+    "title": {
+      "translate": "advancements.archeologyplus.a_terrible_curse.title"
+    },
+    "description": {
+      "translate": "advancements.archeologyplus.a_terrible_curse.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "archeologyplus:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "archeologyplus:certain_death": {}
+        }
+      }
+    }
+  }
+}

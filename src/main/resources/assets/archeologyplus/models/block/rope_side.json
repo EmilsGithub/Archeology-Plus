@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "archeologyplus:block/rope",
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"from": [6, 7, 0],
+			"to": [10, 11, 6],
+			"faces": {
+				"north": {"uv": [4, 0, 8, 4], "texture": "#texture"},
+				"east": {"uv": [0, 5, 4, 11], "rotation": 90, "texture": "#texture"},
+				"south": {"uv": [4, 4, 8, 8], "texture": "#texture"},
+				"west": {"uv": [0, 5, 4, 11], "rotation": 270, "texture": "#texture"},
+				"up": {"uv": [0, 5, 4, 11], "texture": "#texture"},
+				"down": {"uv": [0, 5, 4, 11], "rotation": 180, "texture": "#texture"}
+			}
+		}
+	]
+}

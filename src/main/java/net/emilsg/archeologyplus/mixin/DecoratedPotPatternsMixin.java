@@ -11,13 +11,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DecoratedPotPatterns.class)
 public class DecoratedPotPatternsMixin {
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void onInit(CallbackInfo ci) {
-        ModPottery.matchSherdsWithPatterns();
-    }
-
     @Inject(method = "registerAndGetDefault", at = @At("HEAD"))
     private static void onRegisterAndGetDefault(Registry<String> registry, CallbackInfoReturnable<String> cir) {
         ModPottery.registerAndDefault(registry);
+    }
+
+    @Inject(method = "<init>", at = @At("RETURN"))
+    private void onInit(CallbackInfo ci) {
+        ModPottery.matchSherdsWithPatterns();
     }
 }

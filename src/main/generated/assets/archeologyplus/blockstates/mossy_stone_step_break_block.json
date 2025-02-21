@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "will_break=false": {
+      "model": "archeologyplus:block/mossy_stone_step_break_block_false"
+    },
+    "will_break=true": {
+      "model": "archeologyplus:block/mossy_stone_step_break_block_true"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "block/crop",
+	"textures": {
+		"crop": "archeologyplus:block/spikes_0"
+	}
+}

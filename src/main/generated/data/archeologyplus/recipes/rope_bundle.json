@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    },
+    {
+      "item": "archeologyplus:rope"
+    }
+  ],
+  "result": {
+    "item": "archeologyplus:rope_bundle"
+  }
+}

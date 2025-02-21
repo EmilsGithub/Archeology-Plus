@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "archeologyplus:archeology_poi",
+      "required": false
+    }
+  ]
+}

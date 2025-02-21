@@ -6,11 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeologyplus:light_pottery_sherd"
+          "name": "archeologyplus:sight_pottery_sherd"
         },
         {
           "type": "minecraft:item",
           "name": "archeologyplus:might_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "archeologyplus:nautilus_pottery_sherd"
         },
         {
           "type": "minecraft:item",

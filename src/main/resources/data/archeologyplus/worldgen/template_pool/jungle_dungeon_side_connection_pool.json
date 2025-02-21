@@ -6,7 +6,7 @@
     {
       "weight": 12,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_side_connection_one",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_connection_one",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -15,7 +15,16 @@
     {
       "weight": 12,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_side_connection_two",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_connection_two",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_connection_three",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
@@ -24,16 +33,34 @@
     {
       "weight": 4,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_side_connection_three",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_connection_four",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
     },
     {
-      "weight": 1,
+      "weight": 4,
       "element": {
-        "location": "archeologyplus:jungle_dungeon_room_cap",
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_side_connection_four_two",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_prison_connection_one",
+        "processors": "archeologyplus:jungle_dungeon_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "location": "archeologyplus:jungle_dungeon/jungle_dungeon_prison_connection_two",
         "processors": "archeologyplus:jungle_dungeon_processor",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"

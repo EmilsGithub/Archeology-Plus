@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -19,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class CrumblingBlock extends Block {
     public static final IntProperty CRUMBLE_LEVEL = ModProperties.CRUMBLE_LEVEL;
-    int ticker = 16;
+    int ticker = 12;
 
     public CrumblingBlock(Settings settings) {
         super(settings);
@@ -33,9 +34,11 @@ public class CrumblingBlock extends Block {
 
     @Override
     public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
+        if(!(world instanceof ServerWorld serverWorld)) return;
+
         Entity entity = projectile.getOwner();
-        if (entity instanceof ServerPlayerEntity && !world.isClient) {
-            breakOrCycleState(world, hit.getBlockPos(), state, 1, false);
+        if (entity instanceof ServerPlayerEntity) {
+            breakOrCycleState(serverWorld, hit.getBlockPos(), state, 1, false);
         }
     }
 
@@ -47,21 +50,23 @@ public class CrumblingBlock extends Block {
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        ticker = ticker - (world.random.nextInt(1) + 1);
-        if (world.random.nextBoolean() && !world.isClient && ticker <= 0) {
-            breakOrCycleState(world, pos, state, world.random.nextInt(1) + 1, false);
+        if(!(world instanceof ServerWorld serverWorld)) return;
+
+        ticker = ticker - (serverWorld.random.nextInt(1) + 1);
+        if (serverWorld.random.nextBoolean() && ticker <= 0) {
+            breakOrCycleState(serverWorld, pos, state, 1, false);
             ticker = 16;
         }
     }
 
     @Override
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        if(!(world instanceof ServerWorld serverWorld)) return;
         entity.handleFallDamage(fallDistance, 0.2f, world.getDamageSources().fall());
-        if(!world.isClient) breakOrCycleState(world, pos, state, (int) fallDistance, true);
+        breakOrCycleState(serverWorld, pos, state, (int) fallDistance, true);
     }
 
     private void breakOrDamageNeighbours(World world, BlockPos pos, boolean isBrokenByFall) {
-
         for (Direction direction : Direction.values()) {
 
             BlockPos neighborPos = pos.offset(direction);
@@ -81,15 +86,33 @@ public class CrumblingBlock extends Block {
         }
     }
 
-    private void breakOrCycleState(World world, BlockPos pos, BlockState state, int crumbleAmount, boolean isBrokenByFall) {
-        int crumbleLevel = world.getBlockState(pos).get(CRUMBLE_LEVEL);
+    private void breakOrCycleState(ServerWorld serverWorld, BlockPos pos, BlockState state, int crumbleAmount, boolean isBrokenByFall) {
+        int crumbleLevel = state.get(CRUMBLE_LEVEL);
         if (crumbleLevel + crumbleAmount >= 3) {
-            world.breakBlock(pos, false);
-            breakOrDamageNeighbours(world, pos, isBrokenByFall);
+            serverWorld.breakBlock(pos, false);
+            breakOrDamageNeighbours(serverWorld, pos, isBrokenByFall);
             return;
         }
-        world.setBlockState(pos, state.with(CRUMBLE_LEVEL, state.get(CRUMBLE_LEVEL) + crumbleAmount), Block.NOTIFY_ALL);
+        serverWorld.setBlockState(pos, state.with(CRUMBLE_LEVEL, crumbleLevel + crumbleAmount), Block.NOTIFY_ALL);
 
-        world.playSound(null, pos, SoundEvents.BLOCK_STONE_HIT, SoundCategory.BLOCKS, 1.25f, world.random.nextFloat() * 0.7f + 0.2f);
+        serverWorld.playSound(null, pos, SoundEvents.BLOCK_STONE_HIT, SoundCategory.BLOCKS, 1.25f, serverWorld.random.nextFloat() * 0.7f + 0.2f);
+    }
+
+    @Override
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        boolean powered = world.isReceivingRedstonePower(pos);
+        if (powered) {
+            world.breakBlock(pos, false);
+        }
+    }
+
+    @Override
+    public boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return state.get(CRUMBLE_LEVEL);
     }
 }

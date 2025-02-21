@@ -21,9 +21,11 @@ public class BlockTagDataGen extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(
-                    ModBlocks.CRUMBLING_SANDSTONE, ModBlocks.CRUMBLING_RED_SANDSTONE,
-                    ModBlocks.SANDSTONE_HIEROGLYPHS, ModBlocks.RED_SANDSTONE_HIEROGLYPHS,
-                    ModBlocks.STONE_BRICK_WRITINGS
+                        ModBlocks.CRUMBLING_SANDSTONE, ModBlocks.CRUMBLING_RED_SANDSTONE,
+                        ModBlocks.SANDSTONE_HIEROGLYPHS, ModBlocks.RED_SANDSTONE_HIEROGLYPHS,
+                        ModBlocks.STONE_BRICK_WRITINGS, ModBlocks.CRUMBLING_STONE_BRICKS,
+                        ModBlocks.CRUMBLING_MOSSY_STONE_BRICKS, ModBlocks.ARCHEOLOGY_TABLE,
+                        ModBlocks.SPIKE_TRAP
                 );
 
         getOrCreateTagBuilder(BlockTags.SOUL_FIRE_BASE_BLOCKS)
@@ -31,5 +33,8 @@ public class BlockTagDataGen extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.SOUL_SPEED_BLOCKS)
                 .add(ModBlocks.SUSPICIOUS_SOUL_SAND);
+
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(ModBlocks.ROPE);
     }
 }

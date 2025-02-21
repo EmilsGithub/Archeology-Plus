@@ -31,12 +31,12 @@ public class DescriptionItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable(description).formatted(formatting));
+        tooltip.add(Text.translatable("description.item.archeologyplus." + description).formatted(formatting));
         if (subDescription != null && subFormatting != null && !Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("description.shift.prompt").formatted(subFormatting));
         }
         if (subDescription != null && subFormatting != null && Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable(subDescription).formatted(subFormatting));
+            tooltip.add(Text.translatable("subdescription.item.archeologyplus." + subDescription).formatted(subFormatting));
         }
     }
 }

@@ -16,8 +16,6 @@ import java.util.Map;
 
 public class ModPottery {
 
-    private static final Map<Item, RegistryKey<String>> SHERD_TO_PATTERN = new HashMap<>();
-
     public static final SherdItem[] SHERD_ITEMS = {
             (SherdItem) ModItems.LOADER_POTTERY_SHERD,
             (SherdItem) ModItems.MASTER_POTTERY_SHERD,
@@ -36,6 +34,7 @@ public class ModPottery {
             (SherdItem) ModItems.HALO_POTTERY_SHERD,
             (SherdItem) ModItems.DEVIL_POTTERY_SHERD
     };
+    private static final Map<Item, RegistryKey<String>> SHERD_TO_PATTERN = new HashMap<>();
 
     static {
         for (SherdItem sherdItem : SHERD_ITEMS) {

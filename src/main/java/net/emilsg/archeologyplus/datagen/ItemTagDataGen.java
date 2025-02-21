@@ -1,7 +1,7 @@
 package net.emilsg.archeologyplus.datagen;
 
-import net.emilsg.archeologyplus.register.items.ModItemTags;
 import net.emilsg.archeologyplus.register.items.ModItems;
+import net.emilsg.archeologyplus.util.tags.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -44,7 +44,8 @@ public class ItemTagDataGen extends FabricTagProvider.ItemTagProvider {
                 ModItems.FIRE_IDOL,
                 ModItems.HARVEST_IDOL,
                 ModItems.GLIDING_IDOL,
-                ModItems.WITHER_IDOL
+                ModItems.WITHER_IDOL,
+                ModItems.IDOL_OF_PROTECTION
         );
     }
 }

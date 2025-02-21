@@ -1,0 +1,44 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"texture": "archeologyplus:block/medium_loot_pot",
+		"particle": "archeologyplus:block/medium_loot_pot"
+	},
+	"elements": [
+		{
+			"from": [3.5, 0, 3.5],
+			"to": [12.5, 10, 12.5],
+			"faces": {
+				"north": {"uv": [0, 0, 4.5, 5], "texture": "#texture"},
+				"east": {"uv": [0, 0, 4.5, 5], "texture": "#texture"},
+				"south": {"uv": [0, 0, 4.5, 5], "texture": "#texture"},
+				"west": {"uv": [0, 0, 4.5, 5], "texture": "#texture"},
+				"up": {"uv": [9, 4.5, 4.5, 0], "texture": "#texture"},
+				"down": {"uv": [9, 4.5, 4.5, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [4, 11, 4],
+			"to": [12, 13, 12],
+			"faces": {
+				"north": {"uv": [9, 0, 10, 4], "rotation": 90, "texture": "#texture"},
+				"east": {"uv": [9, 0, 10, 4], "rotation": 90, "texture": "#texture"},
+				"south": {"uv": [9, 0, 10, 4], "rotation": 90, "texture": "#texture"},
+				"west": {"uv": [9, 0, 10, 4], "rotation": 90, "texture": "#texture"},
+				"up": {"uv": [4, 9, 0, 5], "texture": "#texture"},
+				"down": {"uv": [4, 5, 0, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [4.5, 10, 4.5],
+			"to": [11.5, 11, 11.5],
+			"faces": {
+				"north": {"uv": [4, 5, 4.5, 8.5], "rotation": 90, "texture": "#texture"},
+				"east": {"uv": [4, 5, 4.5, 8.5], "rotation": 90, "texture": "#texture"},
+				"south": {"uv": [4, 5, 4.5, 8.5], "rotation": 90, "texture": "#texture"},
+				"west": {"uv": [4, 5, 4.5, 8.5], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	]
+}

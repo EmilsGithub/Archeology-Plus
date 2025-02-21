@@ -1,0 +1,88 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_end"
+      },
+      "when": {
+        "end": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_full"
+      },
+      "when": {
+        "top": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_top"
+      },
+      "when": {
+        "top": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_up"
+      },
+      "when": {
+        "up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_knot"
+      },
+      "when": {
+        "OR": [
+          {"north": "true"},
+          {"east": "true"},
+          {"south": "true"},
+          {"west": "true"}
+        ]
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_side",
+        "uvlock": false
+      },
+      "when": {
+        "north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_side",
+        "uvlock": false,
+        "y": 90
+      },
+      "when": {
+        "east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_side",
+        "uvlock": false,
+        "y": 180
+      },
+      "when": {
+        "south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "archeologyplus:block/rope_side",
+        "uvlock": false,
+        "y": 270
+      },
+      "when": {
+        "west": "true"
+      }
+    }
+  ]
+}

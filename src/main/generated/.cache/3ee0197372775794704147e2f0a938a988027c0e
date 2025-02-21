@@ -1,5 +1,6 @@
-// 1.20.1	2024-03-03T17:56:58.0394084	Archeology Plus/Tags for minecraft:block
-6719354f622915cc030bce88b96f0f1d8f7ee595 data\minecraft\tags\blocks\mineable\pickaxe.json
+// 1.20.1	2024-08-26T11:59:20.908351	Archeology Plus/Tags for minecraft:block
+65b20c4a8c53c72973edede77d74e7231d93f7b9 data\minecraft\tags\blocks\mineable\pickaxe.json
 a4387bda7a10629a745a5697ecbc382c638cfd1b data\minecraft\tags\blocks\soul_speed_blocks.json
 a4387bda7a10629a745a5697ecbc382c638cfd1b data\minecraft\tags\blocks\mineable\shovel.json
+c5393d617e7bc0b3276c8fa4ce8ca1e44b38f1b4 data\minecraft\tags\blocks\climbable.json
 a4387bda7a10629a745a5697ecbc382c638cfd1b data\minecraft\tags\blocks\soul_fire_base_blocks.json
